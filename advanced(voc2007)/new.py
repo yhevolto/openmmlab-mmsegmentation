@@ -64,6 +64,7 @@ model = dict(
 dataset_type = 'PascalVOCDataset'
 data_root = 'VOC2007'
 crop_size = (512, 512)
+load_from = 'new.pth'
 train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations'),
@@ -199,7 +200,7 @@ visualizer = dict(
     name='visualizer')
 log_processor = dict(by_epoch=False)
 log_level = 'INFO'
-load_from = 'taskjin3jinjie.pth'
+
 resume = False
 tta_model = dict(type='SegTTAModel')
 optimizer = dict(type='SGD', lr=0.0008, momentum=0.8, weight_decay=0.0005)
@@ -227,4 +228,4 @@ default_hooks = dict(
     sampler_seed=dict(type='DistSamplerSeedHook'),
     visualization=dict(type='SegVisualizationHook'))
 launcher = 'none'
-work_dir = 'work/voc1'
+
